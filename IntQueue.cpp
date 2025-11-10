@@ -109,9 +109,10 @@ int Search2(const IntQueue& q, int x)
 		int idx;
 		if (q.que[idx = (i + q.front) % q.max ] == x)
 		{
-
+			return i;
 		}
 	}
+	return -1;
 }
 
 void Print(const IntQueue* q)

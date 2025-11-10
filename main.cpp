@@ -3,32 +3,27 @@
 #include <iostream>
 //#include "IntStack.h"
 //#include "ArrayIntQueue.h"
-#include "IntQueue.h"
-
+//#include "IntQueue.h"
+#include "DoubleEndedQueue.h"
 int main()
 {
-	IntQueue Q;
-	Initialize(&Q, 5);
+	DoubleEndedQueue DEQ;
 
-	for (int i = 0; i < Q.max; i++)
+	Initialize(&DEQ, 10);
+
+	for (int i = 0; i < DEQ.Max; i++)
 	{
-		Enque(&Q, i);
+		std::cout << DEQ.Queue[ i ] << "[" << i << "]" << '\n';
 	}
-
-	Print(&Q);
-
-	int A;
-	Deque(&Q, &A);
-
-	int B;
-	Deque(&Q, &B);
-
-	Enque(&Q, 26);
-
-	printf("===================");
-	putchar('\n');
-
-	Print(&Q);
-
-	int temp = Search2(Q, 5);
+	printf("-------------------------------\n");
+	EnqueFront(&DEQ, 3);
+	EnqueFront(&DEQ, 5);
+	EnqueRear(&DEQ, 9);
+	EnqueRear(&DEQ, 4);
+	EnqueRear(&DEQ, 2);
+	EnqueRear(&DEQ, 8);
+	for (int i = 0; i < DEQ.Max; i++)
+	{
+		std::cout << DEQ.Queue[ i ] << "[" << i << "]" << '\n';
+	}
 }
