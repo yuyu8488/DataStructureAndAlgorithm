@@ -5,6 +5,7 @@
 int Initialize(IntStack* s, int max)
 {
 	s->ptr = 0;
+	s->ptrEnd = max - 1;
 	if ((s->stack = new int[max]) == NULL)
 	{
 		s->max = 0;
@@ -16,11 +17,21 @@ int Initialize(IntStack* s, int max)
 
 int Push(IntStack* s, int x)
 {
-	if (s->ptr >= s->max)
+	if (s->ptr >= s->ptrEnd || s->ptr >= s->max)
 	{
 		return -1;
 	}
 	s->stack[s->ptr++] = x;
+	return 0;
+}
+
+int PushFromEnd(IntStack* s, int x)
+{
+	if (s->ptrEnd <= s->ptr || s->ptrEnd <= 0)
+	{
+		return -1;
+	}
+	s->stack[s->ptrEnd--] = x;
 	return 0;
 }
 
@@ -31,6 +42,16 @@ int Pop(IntStack* s, int* x)
 		return -1;
 	}
 	*x = s->stack[--(s->ptr)];
+	return 0;
+}
+
+int PopFromEnd(IntStack* s, int* x)
+{
+	if (s->ptrEnd >= s->max - 1)
+	{
+		return -1;
+	}
+	*x = s->stack[++(s->ptrEnd)];
 	return 0;
 }
 
@@ -99,4 +120,5 @@ void Terminate(IntStack* s)
 	}
 	s->max = 0;
 	s->ptr = 0;
+	s->ptrEnd = 0;
 }

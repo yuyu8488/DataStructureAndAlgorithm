@@ -1,26 +1,33 @@
 ﻿#pragma once
 
-#include "IntStack.h"
+#include <iostream>
+//#include "IntStack.h"
+#include "ArrayIntQueue.h"
 
 int main()
 {
-	IntStack s;
-	if (Initialize(&s, 64) == -1)
+	ArrayIntQueue Q;
+	Initialize(&Q, 10);
+
+	for (int i = 0; i < 10; ++i)
 	{
-		return 1;
+		Enque(&Q, i + 10);
 	}
 
-	Push(&s, 3);
-	Push(&s, 13);
-	Push(&s, 2);
+	for (int i = 0; i < Q.Max; i++)
+	{
+		std::cout << "Value : " << Q.Array[i] << '\n';
+	}
 
-	int PopValue;
-	Pop(&s, &PopValue);
+	std::cout << "===================" << '\n';
+	int DequeValue;
+	Deque(&Q, &DequeValue);
 
-	int PeekValue;
-	Peek(&s, &PeekValue);
-
-	Terminate(&s);
+	for (int i = 0; i < Q.Max; i++)
+	{
+		std::cout << "Value : " << Q.Array[i] << '\n';
+	}
+		
 
 	return 0;
 }

@@ -7,6 +7,7 @@ struct IntStack
 {
 	int max;
 	int ptr;
+	int ptrEnd;
 	int* stack;
 };
 
@@ -14,7 +15,11 @@ int Initialize(IntStack* s, int max);
 
 int Push(IntStack* s, int x);
 
+int PushFromEnd(IntStack* s, int x);
+
 int Pop(IntStack* s, int* x);
+
+int PopFromEnd(IntStack* s, int* x);
 
 int Peek(const IntStack* s, int* x);
 
@@ -35,4 +40,6 @@ int Search(const IntStack* s, int x);
 void Print(const IntStack* s);
 
 void Terminate(IntStack* s);
+
+
 #endif

@@ -123,9 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayIntQueue.h" />
     <ClInclude Include="IntStack.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayIntQueue.cpp" />
     <ClCompile Include="IntStack.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
