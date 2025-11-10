@@ -1,33 +1,34 @@
-﻿#pragma once
+#pragma once
 
 #include <iostream>
 //#include "IntStack.h"
-#include "ArrayIntQueue.h"
+//#include "ArrayIntQueue.h"
+#include "IntQueue.h"
 
 int main()
 {
-	ArrayIntQueue Q;
-	Initialize(&Q, 10);
+	IntQueue Q;
+	Initialize(&Q, 5);
 
-	for (int i = 0; i < 10; ++i)
+	for (int i = 0; i < Q.max; i++)
 	{
-		Enque(&Q, i + 10);
+		Enque(&Q, i);
 	}
 
-	for (int i = 0; i < Q.Max; i++)
-	{
-		std::cout << "Value : " << Q.Array[i] << '\n';
-	}
+	Print(&Q);
 
-	std::cout << "===================" << '\n';
-	int DequeValue;
-	Deque(&Q, &DequeValue);
+	int A;
+	Deque(&Q, &A);
 
-	for (int i = 0; i < Q.Max; i++)
-	{
-		std::cout << "Value : " << Q.Array[i] << '\n';
-	}
-		
+	int B;
+	Deque(&Q, &B);
 
-	return 0;
+	Enque(&Q, 26);
+
+	printf("===================");
+	putchar('\n');
+
+	Print(&Q);
+
+	int temp = Search2(Q, 5);
 }

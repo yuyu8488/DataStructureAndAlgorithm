@@ -124,10 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ArrayIntQueue.h" />
+    <ClInclude Include="IntQueue.h" />
     <ClInclude Include="IntStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArrayIntQueue.cpp" />
+    <ClCompile Include="IntQueue.cpp" />
     <ClCompile Include="IntStack.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
