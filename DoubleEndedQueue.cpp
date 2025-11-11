@@ -3,67 +3,86 @@
 
 int Initialize(DoubleEndedQueue* DEQ, int Max)
 {
-	DEQ->FrontNum = 0;
-	DEQ->RearNum = 0;
-	if ((DEQ->Queue = new int[ Max ]) == NULL)
+	DEQ->Num = 0;
+	DEQ->Front = 0;
+	DEQ->Rear = 0;
+	if ((DEQ->Que = new int[ Max ]) == NULL)
 	{
+		DEQ->Max = 0;
 		return -1;
 	}
 	DEQ->Max = Max;
-	DEQ->Front = 0;
-	DEQ->Rear = Max - 1;
-    return 0;
+	return 0;
 }
 
 int EnqueFront(DoubleEndedQueue* DEQ, int Value)
 {
-	if (DEQ->FrontNum + DEQ->RearNum >= DEQ->Max)
+	if (DEQ->Num >= DEQ->Max)
 	{
 		return -1;
 	}
 	else
 	{
-		DEQ->Queue[ (DEQ->Front + DEQ->FrontNum +DEQ->Max) % DEQ->Max ] = Value;
-		DEQ->FrontNum++;
+		DEQ->Num++;
+		if (--DEQ->Front < 0)
+		{
+			DEQ->Front = DEQ->Max - 1;
+		}
+		DEQ->Que[ DEQ->Front ] = Value;
+		return 0;
 	}
-	return 0;
 }
 
 int EnqueRear(DoubleEndedQueue* DEQ, int Value)
 {
-	if (DEQ->RearNum + DEQ->FrontNum >= DEQ->Max)
+	if (DEQ->Num >= DEQ->Max)
 	{
 		return -1;
 	}
 	else
 	{
-		DEQ->Queue[(DEQ->Rear - DEQ->RearNum + DEQ->Max) % DEQ->Max] = Value;
-		DEQ->RearNum++;
+		DEQ->Num++;
+		DEQ->Que[ DEQ->Rear++ ] = Value;
+		if (DEQ->Rear == DEQ->Max)
+		{
+			DEQ->Rear = 0;
+		}
+		return 0;
 	}
 }
 
 int DequeFront(DoubleEndedQueue* DEQ, int* Value)
 {
-	if (DEQ->FrontNum > 0)
+	if (DEQ->Num <= 0)
 	{
-		*Value = DEQ->Queue[ DEQ->Front ];
-		DEQ->Queue[ DEQ->Front ] = NULL;
-		DEQ->Front = ( ++DEQ->Front % DEQ->Max );
-		DEQ->FrontNum--;
+		return -1;
+	}
+	else
+	{
+		DEQ->Num--;
+		*Value = DEQ->Que[ DEQ->Front++ ];
+		if (DEQ->Front == DEQ->Max)
+		{
+			DEQ->Front = 0;
+		}
 		return 0;
 	}
-	return -1;
 }
 
 int DequeRear(DoubleEndedQueue* DEQ, int* Value)
 {
-	if (DEQ->RearNum > 0)
+	if (DEQ->Num <= 0)
 	{
-		*Value = DEQ->Queue[ DEQ->Rear ];
-		DEQ->Queue[ DEQ->Rear ] = NULL;
-		DEQ->Rear = ( --DEQ->Rear + DEQ->Max ) % DEQ->Max;
-		DEQ->RearNum--;
+		return -1;
 	}
-
-	return 0;
+	else
+	{
+		DEQ->Num--;
+		if (--DEQ->Rear < 0)
+		{
+			DEQ->Rear = DEQ->Max - 1;
+		}
+		*Value = DEQ->Que[ DEQ->Rear ];
+		return 0;
+	}
 }

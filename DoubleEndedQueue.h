@@ -3,11 +3,10 @@
 struct DoubleEndedQueue
 {
 	int Max;
+	int Num;
 	int Front;
-	int FrontNum;
 	int Rear;
-	int RearNum;
-	int* Queue;
+	int* Que;
 };
 
 int Initialize(DoubleEndedQueue* DEQ, int Max);
