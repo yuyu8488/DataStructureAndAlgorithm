@@ -16,6 +16,6 @@ int EnqueFront(DoubleEndedQueue* DEQ, int Value);
 
 int EnqueRear(DoubleEndedQueue* DEQ, int Value);
 
-int DequeFront(DoubleEndedQueue* DEQ, int Value);
+int DequeFront(DoubleEndedQueue* DEQ, int* Value);
 
-int DequeRear(DoubleEndedQueue* DEQ, int Value);
+int DequeRear(DoubleEndedQueue* DEQ, int* Value);

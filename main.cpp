@@ -15,15 +15,33 @@ int main()
 	{
 		std::cout << DEQ.Queue[ i ] << "[" << i << "]" << '\n';
 	}
+
 	printf("-------------------------------\n");
-	EnqueFront(&DEQ, 3);
-	EnqueFront(&DEQ, 5);
-	EnqueRear(&DEQ, 9);
-	EnqueRear(&DEQ, 4);
+
 	EnqueRear(&DEQ, 2);
-	EnqueRear(&DEQ, 8);
+	EnqueRear(&DEQ, 3);
+	EnqueRear(&DEQ, 4);
+	EnqueRear(&DEQ, 5);
+	EnqueRear(&DEQ, 6);
+
+	EnqueFront(&DEQ, 1);
+	EnqueFront(&DEQ, 2);
+	EnqueFront(&DEQ, 3);
+	EnqueFront(&DEQ, 4);
+	EnqueFront(&DEQ, 3);
+	EnqueFront(&DEQ, 2);
+
 	for (int i = 0; i < DEQ.Max; i++)
 	{
-		std::cout << DEQ.Queue[ i ] << "[" << i << "]" << '\n';
+		std::cout << DEQ.Queue[ i ] << "[" << i << "]";
+		if (DEQ.Front == i)
+		{
+			std::cout << "(Front)";
+		}
+		else if (DEQ.Rear == i)
+		{
+			std::cout << "(Rear)";
+		}
+		putchar('\n');
 	}
 }
