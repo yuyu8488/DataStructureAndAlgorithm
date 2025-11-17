@@ -27,6 +27,12 @@
     <ClInclude Include="DoubleEndedQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Euclid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Recur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IntStack.cpp">
@@ -42,6 +48,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DoubleEndedQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Euclid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recur.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

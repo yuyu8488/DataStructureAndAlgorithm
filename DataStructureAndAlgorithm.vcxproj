@@ -125,15 +125,19 @@
   <ItemGroup>
     <ClInclude Include="ArrayIntQueue.h" />
     <ClInclude Include="DoubleEndedQueue.h" />
+    <ClInclude Include="Euclid.h" />
     <ClInclude Include="IntQueue.h" />
     <ClInclude Include="IntStack.h" />
+    <ClInclude Include="Recur.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArrayIntQueue.cpp" />
     <ClCompile Include="DoubleEndedQueue.cpp" />
+    <ClCompile Include="Euclid.cpp" />
     <ClCompile Include="IntQueue.cpp" />
     <ClCompile Include="IntStack.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Recur.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
