@@ -55,3 +55,14 @@ void RecurMemo(int n)
 
 
 }
+
+// 1.스택을 활용해서 비재귀적으로
+// 2.메모이제이션 방법을 활용해서 비재귀적으로
+void recur3(int n)
+{
+	if (n > 0)
+	{
+		recur3(n - 1);
+		recur3(n - 2);
+	}
+}

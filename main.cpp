@@ -6,15 +6,12 @@
 #include "IntQueue.h"
 #include "DoubleEndedQueue.h"
 #include "Recur.h"
+#include "hanoi.h"
 
 int main()
 {
-	int x;
-	printf("정수 입력...");
-	scanf_s("%d", &x);
+	move(4, 1, 3);
 
-	RecurMemo(x);
 
 	return 0;
-
 }

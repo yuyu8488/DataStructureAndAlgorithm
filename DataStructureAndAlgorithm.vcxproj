@@ -126,6 +126,7 @@
     <ClInclude Include="ArrayIntQueue.h" />
     <ClInclude Include="DoubleEndedQueue.h" />
     <ClInclude Include="Euclid.h" />
+    <ClInclude Include="hanoi.h" />
     <ClInclude Include="IntQueue.h" />
     <ClInclude Include="IntStack.h" />
     <ClInclude Include="Recur.h" />
